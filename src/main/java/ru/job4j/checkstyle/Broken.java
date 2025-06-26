@@ -1,14 +1,10 @@
 package ru.job4j.checkstyle;
 
 public class Broken {
-    public String surname;
-
-    public static final String NEWVVALUE = "";
+    private int sizeOfEmpty = 10;
 
     Broken() {
     }
-
-    private int sizeOfEmpty = 10;
 
     void echo() {
     }
@@ -22,4 +18,9 @@ public class Broken {
             System.out.println(obj);
         }
     }
+
+    public String surname;
+
+    public static final String NEWVVALUE = "";
+
 }
