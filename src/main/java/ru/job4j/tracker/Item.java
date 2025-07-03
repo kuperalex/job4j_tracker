@@ -24,8 +24,8 @@ public class Item {
         return id;
     }
 
-    public String getCreated() {
-        return created.format(DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss"));
+    public LocalDateTime getCreated() {
+        return created;
     }
 
     public void setId(int id) {
