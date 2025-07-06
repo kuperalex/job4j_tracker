@@ -14,12 +14,20 @@ public class Library {
         for (Book book : books) {
             System.out.println(book.getName() + ": Pages " + book.getCountPages());
         }
+        System.out.println(" ");
         System.out.println("Change indexs 0 3");
         Book temp = books[0];
         books[0] = books[3];
         books[3] = temp;
         for (Book book : books) {
             System.out.println(book.getName() + ": Pages " + book.getCountPages());
+        }
+        System.out.println(" ");
+        System.out.println("Only Book");
+        for (Book book : books) {
+            if ("Clean code".equals(book.getName())) {
+                System.out.println(book.getName() + ": Pages " + book.getCountPages());
+            }
         }
     }
 }
