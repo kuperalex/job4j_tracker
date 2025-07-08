@@ -7,6 +7,17 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
+    private int indexOf(int id) {
+        int result = -1;
+        for (int index = 0; index < size; index++) {
+            if (items[index].getId() == id) {
+                result = index;
+                break;
+            }
+        }
+        return result;
+    }
+
     public Item add(Item item) {
         item.setId(ids++);
         items[size++] = item;
@@ -40,4 +51,15 @@ public class Tracker {
         }
         return rsl;
     }
+
+    public boolean replace(int id, Item newItem) {
+        int index = indexOf(id);
+        if (index == -1) {
+            return false;
+        }
+        newItem.setId(id);
+        items[index] = newItem;
+        return true;
+    }
+
 }
