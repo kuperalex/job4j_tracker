@@ -64,15 +64,11 @@ public class Tracker {
 
     public void delete(int id) {
         int index = indexOf(id);
-        if (index == -1) {
-            return;
+        if (index != -1) {
+            if (size - index - 1 > 0) {
+                System.arraycopy(items, index + 1, items, index, size - index - 1);
+            }
+            items[size--] = null;
         }
-
-        int numToMove = size - index - 1;
-        if (numToMove > 0) {
-            System.arraycopy(items, index + 1, items, index, numToMove);
-        }
-
-        items[--size] = null;
     }
 }
